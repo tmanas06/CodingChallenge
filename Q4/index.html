@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Learning Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <div class="gradient-bg text-white rounded-lg p-8 mb-8">
+                    <i class="fas fa-graduation-cap text-4xl mb-4"></i>
+                    <h1 class="text-4xl font-bold mb-4">Adaptive Learning Tracker</h1>
+                    <p class="text-xl opacity-90">Personalized learning with spaced repetition and skill assessment</p>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-brain text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Adaptive Learning</h3>
+                    <p class="text-gray-600">Personalized learning paths that adjust to your performance</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-clock text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Spaced Repetition</h3>
+                    <p class="text-gray-600">Optimal review timing for long-term retention</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-chart-line text-3xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Progress Tracking</h3>
+                    <p class="text-gray-600">Comprehensive analytics and performance insights</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-puzzle-piece text-3xl text-yellow-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Multiple Assessments</h3>
+                    <p class="text-gray-600">Multiple choice, code completion, drag-and-drop, and coding challenges</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-trophy text-3xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Achievements</h3>
+                    <p class="text-gray-600">Gamification with badges and learning milestones</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-cogs text-3xl text-indigo-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Smart Analytics</h3>
+                    <p class="text-gray-600">AI-driven recommendations and learning insights</p>
+                </div>
+            </div>
+
+            <!-- API Status -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-center">API Status</h2>
+                <div class="text-center">
+                    <div id="api-status" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium">
+                        <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600 mr-2"></div>
+                        Checking API status...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="text-center">
+                <h2 class="text-2xl font-semibold mb-6">Quick Links</h2>
+                <div class="space-y-4">
+                    <a href="/api/health" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg mr-4">
+                        <i class="fas fa-heartbeat mr-2"></i>API Health Check
+                    </a>
+                    <a href="/api/system/health" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg mr-4">
+                        <i class="fas fa-chart-bar mr-2"></i>System Monitor
+                    </a>
+                    <a href="/api/skills" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg">
+                        <i class="fas fa-list mr-2"></i>Available Skills
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center mt-12 text-gray-500">
+                <p>Built with ❤️ for adaptive learning and educational technology</p>
+                <p class="text-sm mt-2">JavaScript • Node.js • Express • Tailwind CSS</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check API status
+        async function checkAPIStatus() {
+            try {
+                const response = await fetch('/api/health');
+                const data = await response.json();
+                
+                const statusElement = document.getElementById('api-status');
+                if (response.ok) {
+                    statusElement.innerHTML = '<i class="fas fa-check-circle text-green-600 mr-2"></i>API is healthy';
+                    statusElement.className = 'inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-green-100 text-green-800';
+                } else {
+                    throw new Error('API not responding');
+                }
+            } catch (error) {
+                const statusElement = document.getElementById('api-status');
+                statusElement.innerHTML = '<i class="fas fa-exclamation-triangle text-red-600 mr-2"></i>API is offline';
+                statusElement.className = 'inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-red-100 text-red-800';
+            }
+        }
+
+        // Check API status on page load
+        checkAPIStatus();
+    </script>
+</body>
+</html>

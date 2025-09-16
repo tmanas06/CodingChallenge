@@ -15,7 +15,9 @@
     "lint:fix": "eslint . --fix",
     "demo": "node demo.js",
     "load-test": "node tests/load_test.js",
-    "benchmark": "node tests/benchmark.js"
+    "benchmark": "node tests/benchmark.js",
+    "build": "echo 'No build step required'",
+    "vercel-build": "echo 'No build step required'"
   },
   "keywords": [
     "adaptive-learning",

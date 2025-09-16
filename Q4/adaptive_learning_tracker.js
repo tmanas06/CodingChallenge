@@ -1093,8 +1093,8 @@ process.on('SIGTERM', () => {
     process.exit(0);
 });
 
-// Start the server
-if (require.main === module) {
+// Start the server (only if not in Vercel environment)
+if (require.main === module && !process.env.VERCEL) {
     startServer().catch(console.error);
 }
 
