@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "adaptive-learning-tracker",
   "builds": [
     {
       "src": "index.js",
@@ -23,10 +22,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "index.js": {
-      "maxDuration": 30
-    }
   }
 }
