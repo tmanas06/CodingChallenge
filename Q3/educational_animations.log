@@ -1,0 +1,51 @@
+2025-09-16 21:35:24,187 - INFO - Processing animation request: Wave propagation
+2025-09-16 21:35:24,188 - INFO - Generating fallback animation for: Wave propagation
+2025-09-16 21:35:24,189 - WARNING - Error creating fallback animation: No module named 'matplotlib'
+2025-09-16 21:35:24,189 - INFO - Creating text animation for: Wave propagation
+2025-09-16 21:35:24,190 - INFO - Generated fallback animation: text_fallback
+2025-09-16 21:35:24,192 - INFO - Animation cached: da6ffb4994d448819cb2653d6955448e
+2025-09-16 21:35:24,195 - INFO - Metadata saved: output\metadata\Wave_propagation.json
+2025-09-16 21:35:24,196 - INFO - [SUCCESS] Animation generated successfully!
+2025-09-16 21:35:24,196 - INFO - [SAVED] Metadata saved to: output\metadata\Wave_propagation.json
+2025-09-16 21:35:24,197 - INFO - [CONCEPT] Concept: Wave propagation
+2025-09-16 21:35:24,197 - INFO - [DURATION] Duration: 8s
+2025-09-16 21:35:24,197 - INFO - [MODEL] Model used: text_fallback
+2025-09-16 21:35:24,197 - INFO - [GOALS] Learning goals: 4
+2025-09-16 21:35:24,198 - INFO - [EDUCATIONAL_VALUE] Educational value: 8/10
+2025-09-16 21:36:17,067 - INFO - Processing animation request: Wave propagation
+2025-09-16 21:36:17,084 - INFO - Using cached animation for: Wave propagation
+2025-09-16 21:36:17,085 - INFO - Metadata saved: output\metadata\Wave_propagation.json
+2025-09-16 21:36:17,085 - INFO - [SUCCESS] Animation generated successfully!
+2025-09-16 21:36:17,085 - INFO - [SAVED] Metadata saved to: output\metadata\Wave_propagation.json
+2025-09-16 21:36:17,086 - INFO - [CONCEPT] Concept: Wave propagation
+2025-09-16 21:36:17,086 - INFO - [DURATION] Duration: 8s
+2025-09-16 21:36:17,086 - INFO - [MODEL] Model used: text_fallback
+2025-09-16 21:36:17,086 - INFO - [GOALS] Learning goals: 4
+2025-09-16 21:36:17,087 - INFO - [EDUCATIONAL_VALUE] Educational value: 8/10
+2025-09-16 21:36:23,459 - INFO - Starting batch processing of 3 concepts
+2025-09-16 21:36:23,459 - INFO - Processing batch of 3 animation requests
+2025-09-16 21:36:23,459 - INFO - Progress: 1/3 - Processing: Sine wave
+2025-09-16 21:36:23,460 - INFO - Processing animation request: Sine wave
+2025-09-16 21:36:23,460 - INFO - Generating fallback animation for: Sine wave
+2025-09-16 21:36:23,460 - WARNING - Error creating fallback animation: No module named 'matplotlib'
+2025-09-16 21:36:23,461 - INFO - Creating text animation for: Sine wave
+2025-09-16 21:36:23,461 - INFO - Generated fallback animation: text_fallback
+2025-09-16 21:36:23,472 - INFO - Animation cached: cca80e62e32c14e21471ae84625c28f6
+2025-09-16 21:36:25,473 - INFO - Progress: 2/3 - Processing: Pendulum motion
+2025-09-16 21:36:25,473 - INFO - Processing animation request: Pendulum motion
+2025-09-16 21:36:25,474 - INFO - Generating fallback animation for: Pendulum motion
+2025-09-16 21:36:25,474 - WARNING - Error creating fallback animation: No module named 'matplotlib'
+2025-09-16 21:36:25,475 - INFO - Creating text animation for: Pendulum motion
+2025-09-16 21:36:25,476 - INFO - Generated fallback animation: text_fallback
+2025-09-16 21:36:25,478 - INFO - Animation cached: 54a6dfd59f7355913adee90b62196523
+2025-09-16 21:36:27,479 - INFO - Progress: 3/3 - Processing: Chemical reactions
+2025-09-16 21:36:27,480 - INFO - Processing animation request: Chemical reactions
+2025-09-16 21:36:27,480 - INFO - Generating fallback animation for: Chemical reactions
+2025-09-16 21:36:27,481 - WARNING - Error creating fallback animation: No module named 'matplotlib'
+2025-09-16 21:36:27,481 - INFO - Creating text animation for: Chemical reactions
+2025-09-16 21:36:27,482 - INFO - Generated fallback animation: text_fallback
+2025-09-16 21:36:27,484 - INFO - Animation cached: 51f49e013b4c453decaf8f9527175bee
+2025-09-16 21:36:29,488 - INFO - Batch results saved: output\metadata\animation_batch_results.json
+2025-09-16 21:36:29,488 - INFO - [SUCCESS] Batch processing completed!
+2025-09-16 21:36:29,489 - INFO - [SAVED] Results saved to: output\metadata\animation_batch_results.json
+2025-09-16 21:36:29,489 - INFO - [PROCESSED] Processed 3 concepts successfully

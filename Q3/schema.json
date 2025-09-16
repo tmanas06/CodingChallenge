@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Educational Animation Metadata Schema",
+  "description": "Schema for validating educational animation metadata",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the animation"
+    },
+    "concept": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Educational concept being animated"
+    },
+    "animation_path": {
+      "type": "string",
+      "description": "Path to the generated animation file"
+    },
+    "duration": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 15,
+      "description": "Animation duration in seconds"
+    },
+    "target_audience": {
+      "type": "string",
+      "enum": ["elementary", "middle_school", "high_school", "college", "graduate"],
+      "description": "Target educational audience"
+    },
+    "animation_type": {
+      "type": "string",
+      "enum": ["gif", "mp4"],
+      "description": "Type of animation file"
+    },
+    "model_used": {
+      "type": "string",
+      "description": "AI model or method used to generate the animation"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the animation was created"
+    },
+    "file_size": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Size of the animation file in bytes"
+    },
+    "resolution": {
+      "type": "string",
+      "enum": ["480p", "720p", "1080p"],
+      "description": "Animation resolution"
+    },
+    "quality": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "ultra"],
+      "description": "Animation quality level"
+    },
+    "learning_goals": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10
+      },
+      "minItems": 3,
+      "maxItems": 10,
+      "description": "Array of learning goals for the animation"
+    },
+    "key_learning_points": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 5
+      },
+      "minItems": 2,
+      "maxItems": 8,
+      "description": "Array of key learning points demonstrated in the animation"
+    },
+    "tricky_questions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10
+      },
+      "minItems": 2,
+      "maxItems": 6,
+      "description": "Array of challenging questions related to the concept"
+    },
+    "educational_value": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "description": "Educational value rating from 1-10"
+    }
+  },
+  "required": [
+    "id",
+    "concept",
+    "animation_path",
+    "duration",
+    "target_audience",
+    "animation_type",
+    "model_used",
+    "created_at",
+    "learning_goals",
+    "key_learning_points",
+    "tricky_questions",
+    "educational_value"
+  ],
+  "additionalProperties": false
+}

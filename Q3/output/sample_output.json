@@ -1,0 +1,32 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440001",
+  "concept": "Wave propagation",
+  "animation_path": "output/animations/wave_propagation_animation.gif",
+  "duration": 10,
+  "target_audience": "high_school",
+  "animation_type": "gif",
+  "model_used": "huggingface/stable-video-diffusion",
+  "created_at": "2024-01-01T12:00:00Z",
+  "file_size": 2048576,
+  "resolution": "720p",
+  "quality": "high",
+  "learning_goals": [
+    "Understand wave properties: amplitude, frequency, wavelength",
+    "Visualize wave motion and energy transfer",
+    "Explain wave interference and superposition",
+    "Apply wave concepts to real-world phenomena"
+  ],
+  "key_learning_points": [
+    "Waves transfer energy without transferring matter",
+    "Wave speed depends on medium properties",
+    "Interference creates constructive and destructive patterns",
+    "Frequency determines pitch in sound waves"
+  ],
+  "tricky_questions": [
+    "How does wave frequency affect energy transfer?",
+    "What happens when waves of different frequencies interfere?",
+    "Why do waves bend when changing medium?",
+    "How do standing waves form and what are their properties?"
+  ],
+  "educational_value": 9
+}
