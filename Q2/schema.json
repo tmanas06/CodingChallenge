@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Educational Content Package Schema",
+  "description": "Schema for validating educational content packages with enhanced metadata",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the educational content package"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Title of the educational topic"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Detailed description of the educational content"
+    },
+    "page_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the Wikipedia page or source"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL or path to the educational image"
+    },
+    "license": {
+      "type": "string",
+      "description": "License information for the content (e.g., CC BY-SA 4.0)"
+    },
+    "attribution": {
+      "type": "string",
+      "description": "Attribution information for the content source"
+    },
+    "learning_objectives": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10
+      },
+      "minItems": 3,
+      "maxItems": 10,
+      "description": "Array of learning objectives for the educational content"
+    },
+    "difficulty_level": {
+      "type": "string",
+      "enum": ["elementary", "middle_school", "high_school", "college", "graduate"],
+      "description": "Difficulty level of the educational content"
+    },
+    "related_topics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 2
+      },
+      "minItems": 2,
+      "maxItems": 8,
+      "description": "Array of related educational topics"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the content was created"
+    },
+    "source": {
+      "type": "string",
+      "enum": ["wikipedia", "wikimedia", "generated", "fallback"],
+      "description": "Source of the educational content"
+    },
+    "image_quality": {
+      "type": "string",
+      "enum": ["high", "medium", "low", "generated"],
+      "description": "Quality level of the educational image"
+    },
+    "educational_value": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "description": "Educational value rating from 1-10"
+    }
+  },
+  "required": [
+    "id",
+    "title", 
+    "description",
+    "page_url",
+    "image_url",
+    "license",
+    "attribution",
+    "learning_objectives",
+    "difficulty_level",
+    "related_topics",
+    "created_at"
+  ],
+  "additionalProperties": false
+}
