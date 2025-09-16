@@ -1,0 +1,67 @@
+{
+  "skill_id": "javascript_variables",
+  "title": "JavaScript Variables",
+  "description": "Understanding variable declaration, scope, and different variable types",
+  "prerequisites": ["javascript_fundamentals"],
+  "difficulty_level": 2,
+  "mastery_threshold": 0.85,
+  "review_intervals": [1, 3, 7, 14, 30],
+  "category": "programming",
+  "estimated_time_minutes": 45,
+  "assessments": [
+    {
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "question": "What is the difference between 'let' and 'var'?",
+          "options": [
+            "No difference, they are interchangeable",
+            "let has block scope, var has function scope",
+            "var is newer than let",
+            "let can only be used for numbers"
+          ],
+          "correct_answer": 1,
+          "explanation": "let has block scope while var has function scope, and let is not hoisted."
+        },
+        {
+          "question": "What will be the output of: console.log(x); let x = 5;",
+          "options": [
+            "5",
+            "undefined",
+            "ReferenceError",
+            "null"
+          ],
+          "correct_answer": 2,
+          "explanation": "let variables are not hoisted, so accessing x before declaration throws a ReferenceError."
+        },
+        {
+          "question": "Which keyword creates a constant variable?",
+          "options": [
+            "const",
+            "final",
+            "static",
+            "readonly"
+          ],
+          "correct_answer": 0,
+          "explanation": "const is used to declare constants in JavaScript."
+        }
+      ]
+    },
+    {
+      "type": "code_completion",
+      "template": "// Declare a constant for PI\nconst ___ = 3.14159;\n\n// Declare a variable that can be reassigned\nlet ___ = 'initial value';\n\n// Update the variable\n___ = 'updated value';",
+      "hints": [
+        "Use const for values that won't change",
+        "Use let for values that might change",
+        "Choose descriptive variable names"
+      ],
+      "correct_solution": "// Declare a constant for PI\nconst PI = 3.14159;\n\n// Declare a variable that can be reassigned\nlet message = 'initial value';\n\n// Update the variable\nmessage = 'updated value';",
+      "test_cases": [
+        {
+          "input": "const PI = 3.14159;\nlet message = 'initial value';\nmessage = 'updated value';",
+          "expected_output": "Code should run without errors"
+        }
+      ]
+    }
+  ]
+}

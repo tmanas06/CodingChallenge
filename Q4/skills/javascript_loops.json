@@ -1,0 +1,101 @@
+{
+  "skill_id": "javascript_loops",
+  "title": "JavaScript Loops",
+  "description": "Understanding for loops, while loops, and loop control statements",
+  "prerequisites": ["javascript_conditionals"],
+  "difficulty_level": 3,
+  "mastery_threshold": 0.85,
+  "review_intervals": [1, 3, 7, 14, 30],
+  "category": "programming",
+  "estimated_time_minutes": 50,
+  "assessments": [
+    {
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "question": "What will be the output of: for(let i = 0; i < 3; i++) { console.log(i); }",
+          "options": [
+            "0, 1, 2",
+            "1, 2, 3",
+            "0, 1, 2, 3",
+            "1, 2"
+          ],
+          "correct_answer": 0,
+          "explanation": "The loop runs from i=0 to i<3, so it prints 0, 1, 2."
+        },
+        {
+          "question": "What does the 'break' statement do in a loop?",
+          "options": [
+            "Skips the current iteration",
+            "Exits the loop completely",
+            "Continues to the next iteration",
+            "Restarts the loop"
+          ],
+          "correct_answer": 1,
+          "explanation": "break exits the loop completely, while continue skips to the next iteration."
+        },
+        {
+          "question": "Which loop is best for iterating over an array?",
+          "options": [
+            "for loop",
+            "while loop",
+            "do-while loop",
+            "All are equally good"
+          ],
+          "correct_answer": 0,
+          "explanation": "for loops are typically best for arrays as they provide index control and are more readable."
+        }
+      ]
+    },
+    {
+      "type": "code_completion",
+      "template": "let numbers = [1, 2, 3, 4, 5];\nlet sum = 0;\n\nfor (let i = 0; i < ___.length; i++) {\n    sum += ___[i];\n}\n\nconsole.log('Sum:', sum);",
+      "hints": [
+        "Use the numbers array",
+        "Access array elements by index"
+      ],
+      "correct_solution": "let numbers = [1, 2, 3, 4, 5];\nlet sum = 0;\n\nfor (let i = 0; i < numbers.length; i++) {\n    sum += numbers[i];\n}\n\nconsole.log('Sum:', sum);",
+      "test_cases": [
+        {
+          "input": "let numbers = [1, 2, 3, 4, 5];\nlet sum = 0;\nfor (let i = 0; i < numbers.length; i++) {\n    sum += numbers[i];\n}\nconsole.log('Sum:', sum);",
+          "expected_output": "Sum: 15"
+        }
+      ]
+    },
+    {
+      "type": "coding_challenge",
+      "problem_statement": "Write a function that finds the first even number in an array and returns its index. If no even number is found, return -1.",
+      "constraints": [
+        "Use a for loop",
+        "Return the index, not the value",
+        "Return -1 if no even number is found"
+      ],
+      "examples": [
+        {
+          "input": "[1, 3, 5, 8, 9]",
+          "output": "3",
+          "explanation": "The first even number is 8 at index 3"
+        },
+        {
+          "input": "[1, 3, 5, 7, 9]",
+          "output": "-1",
+          "explanation": "No even numbers found"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "findFirstEven([1, 3, 5, 8, 9])",
+          "expected_output": "3"
+        },
+        {
+          "input": "findFirstEven([1, 3, 5, 7, 9])",
+          "expected_output": "-1"
+        },
+        {
+          "input": "findFirstEven([2, 4, 6, 8])",
+          "expected_output": "0"
+        }
+      ]
+    }
+  ]
+}

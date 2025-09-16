@@ -1,0 +1,66 @@
+{
+  "skill_id": "javascript_fundamentals",
+  "title": "JavaScript Fundamentals",
+  "description": "Core JavaScript concepts including variables, data types, and basic operations",
+  "prerequisites": [],
+  "difficulty_level": 1,
+  "mastery_threshold": 0.85,
+  "review_intervals": [1, 3, 7, 14, 30],
+  "category": "programming",
+  "estimated_time_minutes": 30,
+  "assessments": [
+    {
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "question": "What is the correct way to declare a variable in JavaScript?",
+          "options": [
+            "var name = 'John';",
+            "variable name = 'John';",
+            "v name = 'John';",
+            "declare name = 'John';"
+          ],
+          "correct_answer": 0,
+          "explanation": "The 'var' keyword is used to declare variables in JavaScript."
+        },
+        {
+          "question": "Which of the following is NOT a JavaScript data type?",
+          "options": [
+            "string",
+            "number",
+            "boolean",
+            "character"
+          ],
+          "correct_answer": 3,
+          "explanation": "JavaScript has string, number, boolean, undefined, null, and object types, but not character."
+        },
+        {
+          "question": "What will console.log(typeof null) output?",
+          "options": [
+            "null",
+            "undefined",
+            "object",
+            "string"
+          ],
+          "correct_answer": 2,
+          "explanation": "typeof null returns 'object' due to a historical bug in JavaScript."
+        }
+      ]
+    },
+    {
+      "type": "code_completion",
+      "template": "let ___ = 'Hello World';\nconsole.log(___);",
+      "hints": [
+        "Use a descriptive variable name",
+        "Make sure the variable name matches in both places"
+      ],
+      "correct_solution": "let message = 'Hello World';\nconsole.log(message);",
+      "test_cases": [
+        {
+          "input": "let message = 'Hello World';\nconsole.log(message);",
+          "expected_output": "Hello World"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+# JavaScript Adaptive Learning Progress Tracker - Q4
+# Dependencies for Node.js backend
+
+# Core Dependencies
+express==4.18.2
+cors==2.8.5
+uuid==9.0.0
+
+# Development Dependencies
+jest==29.7.0
+nodemon==3.0.1
+eslint==8.50.0
+supertest==6.3.3
+
+# Optional Dependencies for Enhanced Features
+redis==4.6.7
+mongoose==7.5.0
+bcryptjs==2.4.3
+jsonwebtoken==9.0.2
+helmet==7.0.0
+compression==1.7.4
+morgan==1.10.0
+
+# Testing and Quality
+nyc==15.1.0
+coveralls==3.1.1
+husky==8.0.3
+lint-staged==14.0.1
+
+# Documentation
+jsdoc==4.0.2
+swagger-jsdoc==6.2.8
+swagger-ui-express==5.0.0

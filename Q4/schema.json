@@ -1,0 +1,229 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Adaptive Learning Progress Schema",
+  "description": "Schema for user progress tracking in adaptive learning system",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Unique identifier for the user",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "completed_skills": {
+      "type": "array",
+      "description": "Array of skill IDs that have been mastered",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z_]+$"
+      },
+      "uniqueItems": true
+    },
+    "skills": {
+      "type": "object",
+      "description": "Detailed progress for each skill",
+      "patternProperties": {
+        "^[a-z_]+$": {
+          "type": "object",
+          "properties": {
+            "mastery_level": {
+              "type": "number",
+              "description": "Mastery level from 0.0 to 1.0",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "attempts": {
+              "type": "integer",
+              "description": "Number of assessment attempts",
+              "minimum": 0
+            },
+            "last_review": {
+              "type": "string",
+              "description": "ISO 8601 timestamp of last review",
+              "format": "date-time"
+            },
+            "interval": {
+              "type": "integer",
+              "description": "Days until next review",
+              "minimum": 1,
+              "maximum": 365
+            },
+            "ease_factor": {
+              "type": "number",
+              "description": "Ease factor for spaced repetition",
+              "minimum": 1.3,
+              "maximum": 3.0
+            },
+            "total_time_spent": {
+              "type": "integer",
+              "description": "Total time spent on this skill in seconds",
+              "minimum": 0
+            },
+            "correct_attempts": {
+              "type": "integer",
+              "description": "Number of correct attempts",
+              "minimum": 0
+            },
+            "error_patterns": {
+              "type": "array",
+              "description": "Array of error patterns encountered",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "error_type": {
+                    "type": "string",
+                    "enum": ["syntax_error", "logic_error", "timeout", "low_performance", "unknown"]
+                  },
+                  "question_type": {
+                    "type": "string",
+                    "enum": ["multiple_choice", "code_completion", "drag_drop", "coding_challenge"]
+                  }
+                },
+                "required": ["timestamp", "error_type", "question_type"]
+              }
+            }
+          },
+          "required": ["mastery_level", "attempts", "last_review", "interval", "ease_factor"]
+        }
+      }
+    },
+    "current_learning_path": {
+      "type": "array",
+      "description": "Current recommended learning path",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z_]+$"
+      }
+    },
+    "total_time_spent": {
+      "type": "integer",
+      "description": "Total time spent learning in seconds",
+      "minimum": 0
+    },
+    "created_at": {
+      "type": "string",
+      "description": "ISO 8601 timestamp when user was created",
+      "format": "date-time"
+    },
+    "last_updated": {
+      "type": "string",
+      "description": "ISO 8601 timestamp of last update",
+      "format": "date-time"
+    },
+    "learning_goals": {
+      "type": "array",
+      "description": "User's learning goals and objectives",
+      "items": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 200
+      },
+      "maxItems": 10
+    },
+    "preferred_difficulty": {
+      "type": "string",
+      "description": "User's preferred difficulty level",
+      "enum": ["beginner", "intermediate", "advanced", "expert"]
+    },
+    "learning_style": {
+      "type": "string",
+      "description": "User's preferred learning style",
+      "enum": ["visual", "auditory", "kinesthetic", "reading", "mixed"]
+    },
+    "timezone": {
+      "type": "string",
+      "description": "User's timezone for scheduling",
+      "pattern": "^[A-Za-z_/]+$"
+    },
+    "notifications_enabled": {
+      "type": "boolean",
+      "description": "Whether user wants to receive notifications"
+    },
+    "daily_goal_minutes": {
+      "type": "integer",
+      "description": "Daily learning goal in minutes",
+      "minimum": 5,
+      "maximum": 480
+    },
+    "streak_days": {
+      "type": "integer",
+      "description": "Current learning streak in days",
+      "minimum": 0
+    },
+    "longest_streak": {
+      "type": "integer",
+      "description": "Longest learning streak achieved",
+      "minimum": 0
+    },
+    "achievements": {
+      "type": "array",
+      "description": "User's earned achievements",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z_]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 100
+          },
+          "description": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200
+          },
+          "earned_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "category": {
+            "type": "string",
+            "enum": ["learning", "streak", "mastery", "exploration", "social"]
+          }
+        },
+        "required": ["id", "name", "description", "earned_at", "category"]
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "description": "User preferences and settings",
+      "properties": {
+        "theme": {
+          "type": "string",
+          "enum": ["light", "dark", "auto"]
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+        },
+        "font_size": {
+          "type": "string",
+          "enum": ["small", "medium", "large"]
+        },
+        "sound_enabled": {
+          "type": "boolean"
+        },
+        "vibration_enabled": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "required": [
+    "user_id",
+    "completed_skills",
+    "skills",
+    "current_learning_path",
+    "total_time_spent",
+    "created_at",
+    "last_updated"
+  ],
+  "additionalProperties": false
+}

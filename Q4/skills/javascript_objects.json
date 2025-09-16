@@ -1,0 +1,118 @@
+{
+  "skill_id": "javascript_objects",
+  "title": "JavaScript Objects",
+  "description": "Understanding object creation, properties, methods, and object manipulation",
+  "prerequisites": ["javascript_functions"],
+  "difficulty_level": 4,
+  "mastery_threshold": 0.85,
+  "review_intervals": [1, 3, 7, 14, 30],
+  "category": "programming",
+  "estimated_time_minutes": 70,
+  "assessments": [
+    {
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "question": "What is the correct way to access an object property?",
+          "options": [
+            "object.property",
+            "object['property']",
+            "Both A and B",
+            "object->property"
+          ],
+          "correct_answer": 2,
+          "explanation": "Both dot notation (object.property) and bracket notation (object['property']) are valid."
+        },
+        {
+          "question": "What will be the output of: let obj = {name: 'John'}; console.log(obj.age);",
+          "options": [
+            "undefined",
+            "null",
+            "Error",
+            "0"
+          ],
+          "correct_answer": 0,
+          "explanation": "Accessing a non-existent property returns undefined."
+        },
+        {
+          "question": "How do you add a new property to an existing object?",
+          "options": [
+            "obj.newProperty = value;",
+            "obj['newProperty'] = value;",
+            "Both A and B",
+            "You cannot add properties to objects"
+          ],
+          "correct_answer": 2,
+          "explanation": "You can add properties using either dot notation or bracket notation."
+        }
+      ]
+    },
+    {
+      "type": "code_completion",
+      "template": "let person = {\n    name: 'Alice',\n    age: 25,\n    greet: function() {\n        return 'Hello, I am ' + this.___;\n    }\n};\n\nconsole.log(person.___());",
+      "hints": [
+        "Use 'this' to refer to the object's properties",
+        "Call the method using dot notation"
+      ],
+      "correct_solution": "let person = {\n    name: 'Alice',\n    age: 25,\n    greet: function() {\n        return 'Hello, I am ' + this.name;\n    }\n};\n\nconsole.log(person.greet());",
+      "test_cases": [
+        {
+          "input": "let person = {\n    name: 'Alice',\n    age: 25,\n    greet: function() {\n        return 'Hello, I am ' + this.name;\n    }\n};\nconsole.log(person.greet());",
+          "expected_output": "Hello, I am Alice"
+        }
+      ]
+    },
+    {
+      "type": "drag_drop",
+      "instructions": "Drag the correct code snippets to complete the object creation and manipulation:",
+      "items": [
+        "let student = {",
+        "name: 'John',",
+        "grade: 'A',",
+        "study: function() {",
+        "return 'Studying hard';",
+        "}",
+        "};",
+        "student.age = 20;",
+        "console.log(student.name);"
+      ],
+      "target_areas": [
+        "Object Declaration",
+        "Properties",
+        "Method",
+        "Property Addition",
+        "Property Access"
+      ],
+      "correct_mapping": {
+        "Object Declaration": ["let student = {"],
+        "Properties": ["name: 'John',", "grade: 'A',"],
+        "Method": ["study: function() {", "return 'Studying hard';", "}"],
+        "Property Addition": ["student.age = 20;"],
+        "Property Access": ["console.log(student.name);"]
+      }
+    },
+    {
+      "type": "coding_challenge",
+      "problem_statement": "Create a 'Car' object with properties: make, model, year, and a method 'start' that returns 'The [make] [model] is starting...'. Then create an instance and call the start method.",
+      "constraints": [
+        "Use object literal syntax",
+        "Include all required properties",
+        "Create an instance of the object",
+        "Call the start method"
+      ],
+      "examples": [
+        {
+          "input": "let myCar = new Car('Toyota', 'Camry', 2020);\nmyCar.start();",
+          "output": "The Toyota Camry is starting...",
+          "explanation": "Create object with properties and call the start method"
+        }
+      ],
+      "test_cases": [
+        {
+          "input": "let car = {make: 'Honda', model: 'Civic', year: 2021, start: function() { return 'The ' + this.make + ' ' + this.model + ' is starting...'; }};\ncar.start();",
+          "expected_output": "The Honda Civic is starting..."
+        }
+      ]
+    }
+  ]
+}

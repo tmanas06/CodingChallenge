@@ -1,0 +1,52 @@
+{
+  "name": "adaptive-learning-tracker",
+  "version": "1.0.0",
+  "description": "JavaScript Adaptive Learning Progress Tracker with spaced repetition and skill assessment",
+  "main": "adaptive_learning_tracker.js",
+  "scripts": {
+    "start": "node adaptive_learning_tracker.js",
+    "dev": "nodemon adaptive_learning_tracker.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:performance": "jest tests/test_performance.js",
+    "test:all": "jest && jest tests/test_performance.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "demo": "node demo.js",
+    "load-test": "node tests/load_test.js",
+    "benchmark": "node tests/benchmark.js"
+  },
+  "keywords": [
+    "adaptive-learning",
+    "spaced-repetition",
+    "skill-assessment",
+    "education",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Educational Technology Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "eslint": "^8.50.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmanas06/CodingChallenge/tree/main/Q4"
+  },
+  "bugs": {
+    "url": "https://github.com/tmanas06/CodingChallenge/issues"
+  },
+  "homepage": "https://github.com/tmanas06/CodingChallenge#readme"
+}
