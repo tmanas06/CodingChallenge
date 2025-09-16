@@ -1,0 +1,56 @@
+[
+  {
+    "id": "analogy_001",
+    "prompt": "Hexagon is to 6 sides as Octagon is to 8 sides",
+    "model": "stabilityai/stable-diffusion-2-1",
+    "seed": 1234,
+    "created_at": "2024-01-01T12:00:00Z",
+    "image_url": "output/images/analogy_001.png",
+    "complexity_level": "intermediate",
+    "estimated_time_minutes": 4,
+    "tricky_questions": [
+      "How many diagonals does a hexagon have?",
+      "What is the sum of interior angles in an octagon?",
+      "Which polygon has more symmetry axes: hexagon or octagon?"
+    ],
+    "shape_a": "Hexagon",
+    "shape_b": "Octagon",
+    "relationship": "sides"
+  },
+  {
+    "id": "analogy_002",
+    "prompt": "Dodecagon is to 1800° total angles as Icosagon is to 3240° total angles",
+    "model": "stabilityai/stable-diffusion-2-1",
+    "seed": 5678,
+    "created_at": "2024-01-01T12:05:00Z",
+    "image_url": "output/images/analogy_002.png",
+    "complexity_level": "advanced",
+    "estimated_time_minutes": 6,
+    "tricky_questions": [
+      "What is the measure of each interior angle in a regular dodecagon?",
+      "How many degrees are in each exterior angle of an icosagon?",
+      "Which shape has a larger total angle sum: dodecagon or icosagon?"
+    ],
+    "shape_a": "Dodecagon",
+    "shape_b": "Icosagon",
+    "relationship": "angles"
+  },
+  {
+    "id": "analogy_003",
+    "prompt": "Triangle is to 0 diagonals as Square is to 2 diagonals",
+    "model": "stabilityai/stable-diffusion-2-1",
+    "seed": 9012,
+    "created_at": "2024-01-01T12:10:00Z",
+    "image_url": "output/images/analogy_003.png",
+    "complexity_level": "beginner",
+    "estimated_time_minutes": 2,
+    "tricky_questions": [
+      "How many diagonals can be drawn from one vertex of a triangle?",
+      "What is the total number of diagonals in a square?",
+      "Which polygon has more diagonals: triangle or square?"
+    ],
+    "shape_a": "Triangle",
+    "shape_b": "Square",
+    "relationship": "diagonals"
+  }
+]

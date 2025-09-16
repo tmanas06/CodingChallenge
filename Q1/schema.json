@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Shape Analogy Question Schema",
+  "description": "Schema for validating shape-based analogy questions with metadata",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^analogy_\\d{3}$",
+      "description": "Unique identifier for the analogy question"
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 10,
+      "description": "The analogy question prompt text"
+    },
+    "model": {
+      "type": "string",
+      "description": "The Hugging Face model used for image generation"
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 1000,
+      "maximum": 9999,
+      "description": "Random seed used for generation"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the analogy was created"
+    },
+    "image_url": {
+      "type": "string",
+      "pattern": ".*\\.png$",
+      "description": "Path to the generated PNG image file"
+    },
+    "complexity_level": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced"],
+      "description": "Difficulty level of the analogy question"
+    },
+    "estimated_time_minutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 30,
+      "description": "Estimated time in minutes to complete the question"
+    },
+    "tricky_questions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10
+      },
+      "minItems": 2,
+      "maxItems": 3,
+      "description": "Array of challenging follow-up questions"
+    },
+    "shape_a": {
+      "type": "string",
+      "description": "Name of the first shape in the analogy"
+    },
+    "shape_b": {
+      "type": "string",
+      "description": "Name of the second shape in the analogy"
+    },
+    "relationship": {
+      "type": "string",
+      "enum": ["sides", "angles", "symmetry", "diagonals", "vertices", "edges", "interior angles", "exterior angles", "area", "perimeter"],
+      "description": "The mathematical relationship being compared"
+    }
+  },
+  "required": [
+    "id",
+    "prompt", 
+    "model",
+    "seed",
+    "created_at",
+    "image_url",
+    "complexity_level",
+    "estimated_time_minutes",
+    "tricky_questions"
+  ],
+  "additionalProperties": false
+}
